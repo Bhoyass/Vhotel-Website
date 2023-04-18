@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo/logo2.png" type="image/png" />
+    <title>VHotel</title>
+
+    <!-- =========================================== CSS LIBRARY =============================================== -->
+    <!-- Fancy Box -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <!-- Sweet Alert -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!-- Animation.io -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css"
+    />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Scrolly.js -->
+    <link rel="stylesheet" href="scrolly/cssanimation.css" />
+    <!-- =========================================== CSS LIBRARY =============================================== -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="book-mobile" style="opacity: 0"></div>
+
+    <div class="navbar">
+      <div class="logo">
+        <a href="#"><img src="logo/logo2.png" alt="" /></a>
+      </div>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <div class="menu-btn">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+
+    <section id="header">
+      <div class="container-left jarallax">
+        <div class="text">
+          <div class="container">
+            <h2 id="ml12" class="ml12">Memorible</h2>
+            <h1>
+              Hotels For moments
+              <span>Rich</span> in emotions
+            </h1>
+            <p>Book now and get best prices</p>
+          </div>
+        </div>
+      </div>
+
+      <section id="book">
+        <div id="arrival" class="box">
+          <h3>Arrival Date</h3>
+          <input type="date" id="arrivalDate" />
+        </div>
+
+        <div id="departure" class="box">
+          <h3>Departure Date</h3>
+          <input type="date" id="departureDate" />
+        </div>
+
+        <div id="people" class="box">
+          <h3>Total Guests</h3>
+          <input type="number" id="numPeople" min="1" placeholder="0" />
+        </div>
+
+        <div class="box">
+          <button onclick="toggleDropdown()">BOOK A STAY</button>
+          <div class="dropdown" id="myDropdown" style="opacity: 0">
+            <input type="text" placeholder="Name" id="name" />
+            <input type="email" placeholder="Email" id="email" />
+            <input
+              type="tel"
+              placeholder="Phone"
+              id="phone"
+              pattern="[0-9]{10}"
+            />
+            <select id="roomType">
+              <option value="" selected disabled>Choose Room Type</option>
+              <option value="king">King Bedroom</option>
+              <option value="queen">Queen Bedroom</option>
+              <option value="double">Double Bedroom</option>
+              <option value="suite">Suite</option>
+              <option value="studio">Studio</option>
+            </select>
+            <button onclick="submitForm()">Submit</button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Header END -->
+
+    <!-- Book Mobile -->
+    <!-- Book Mobile END -->
+
+    <!-- Article -->
+    <article>
+      <div class="left-container">
+        <h1>Here, local talents come together.</h1>
+      </div>
+      <div class="right-container">
+        <p id="target">
+          We let ourselves be inspired by the rich history as well as by
+          contemporary artists of the city. For in the 21st century the city has
+          so much more to offer than just medieval heritage.
+        </p>
+      </div>
+    </article>
+    <!-- Article END -->
+    <div
+      id="packages"
+      class="title"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h1>Featured Rooms</h1>
+    </div>
+    <!-- Rooms -->
+    <section id="rooms">
+      <div class="king-room">
+        <div class="left">
+          <div class="img-container jarallax">
+            <img
+              class="img1"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-offset="360"
+              src="img/king.jpg"
+              alt=""
+            />
+            <img
+              class="img2"
+              data-aos="fade-left"
+              data-aos-offset="300"
+              src="img/king2.jpg"
+              data-aos-duration="1000"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-offset="490"
+          data-aos="fade-up"
+          class="right"
+        >
+          <div class="text">
+            <h1>King<br />Bedroom</h1>
+            <p>
+              A hotel is an establishment that provides paid lodging on a
+              short-term basis. Facilities provided may range from a
+              modest-quality mattress in a small room to large suites with
+              bigger.
+            </p>
+            <a id="book1" href="#ml12"><button>BOOK NOW</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="queen-room">
+        <div class="left">
+          <div
+            class="text"
+            data-aos-duration="1000"
+            data-aos-offset="400"
+            data-aos="fade-up"
+            class="right"
+          >
+            <h1>Queen &<br />Double Bedroom</h1>
+            <p>
+              A hotel is an establishment that provides paid lodging on a
+              short-term basis. Facilities provided may range from a
+              modest-quality mattress in a small room to large suites with
+              bigger
+            </p>
+            <a id="book2" href="#ml12"><button>BOOK NOW</button></a>
+          </div>
+        </div>
+        <div
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-offset="490"
+          data-aos="fade-up"
+          class="right"
+        >
+          <div class="img-container jarallax">
+            <img
+              class="img2"
+              data-aos="fade-left"
+              data-aos-offset="500"
+              data-aos-duration="1000"
+              src="img/queen.jpg"
+              alt=""
+            />
+            <img
+              class="img3"
+              data-aos="flip-up"
+              data-aos-offset="370"
+              src="img/queen2.jpg"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Rooms END -->
+
+    <div class="title" data-aos="fade-up" data-aos-duration="1000">
+      <h1>Hotel Aminities</h1>
+    </div>
+
+    <!-- Feature -->
+    <section id="feature">
+      <div class="container-1">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+        >
+          <img src="img/parking.png" alt="" />
+          <h1>Free Self-Parking</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="250"
+        >
+          <img src="img/internet.png" alt="" />
+          <h1>High Internet access</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="500"
+        >
+          <img src="img/wifi.png" alt="" />
+          <h1>WiFi in public areas</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+      </div>
+
+      <div class="container-1">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+        >
+          <img src="img/elevator.png" alt="" />
+          <h1>Elevaors</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="250"
+        >
+          <img src="img/meeting.png" alt="" />
+          <h1>Meeting rooms</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="500"
+        >
+          <img src="img/laundry.png" alt="" />
+          <h1>Laundry and Valet</h1>
+          <p>
+            A hotel is an establishment that provides paid lodging on a
+            short-term basis. Facilities provided may range from a modest-
+            quality.
+          </p>
+          <h3>READ MORE</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Feature END -->
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/king.jpg" alt="" />
+          <div class="text-overlay">
+            <h2>BEAUTY & WELLNESS</h2>
+            <p class="ml13">
+              Advocating an immersive enriching journey, The Hotel Scape SPA
+              Suite offer moments of relaxed pleasure and sensory
+              revitalization.
+            </p>
+            <button>READ MORE</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/queen.jpg" alt="" />
+          <div class="text-overlay">
+            <h2>BEAUTY & WELLNESS</h2>
+            <p class="ml14">
+              Advocating an immersive enriching journey, The Hotel Scape SPA
+              Suite offer moments of relaxed pleasure and sensory
+              revitalization.
+            </p>
+            <button>READ MORE</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/king2.jpg" alt="" />
+          <div class="text-overlay">
+            <h2>BEAUTY & WELLNESS</h2>
+            <p class="ml15">
+              Advocating an immersive enriching journey, The Hotel Scape SPA
+              Suite offer moments of relaxed pleasure and sensory
+              revitalization.
+            </p>
+            <button>READ MORE</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper End -->
+
+    <!-- Latest News -->
+    <section id="news">
+      <div
+        class="news-title"
+        id="packages"
+        class="title"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h1><span>Our Latest</span> News</h1>
+      </div>
+      <div class="news-content">
+        <div
+          class="content-box"
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+        >
+          <a href="img/news1.jpg" data-fancybox data-caption="News 1">
+            <div class="content-img"></div>
+          </a>
+          <div class="box-date">
+            <h3>NEWS</h3>
+            <h4>22 February 2023</h4>
+          </div>
+          <div class="content-text">
+            <h1>Once in a Lifetime a new luxury hotel affiliation</h1>
+          </div>
+          <div class="content-button">
+            <h3>READ MORE</h3>
+            <i class="fa fa-arrow-right-long"></i>
+          </div>
+        </div>
+
+        <div
+          class="content-box"
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="150"
+        >
+          <a href="img/news2.jpg" data-fancybox data-caption="News 2">
+            <div class="content-img second"></div>
+          </a>
+
+          <div class="box-date">
+            <h3>NEWS</h3>
+            <h4>22 February 2023</h4>
+          </div>
+          <div class="content-text">
+            <h1>Once in a Lifetime a new luxury hotel affiliation</h1>
+          </div>
+          <div class="content-button">
+            <h3>READ MORE</h3>
+            <i class="fa fa-arrow-right-long"></i>
+          </div>
+        </div>
+
+        <div
+          class="content-box"
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+          data-aos-delay="300"
+        >
+          <a href="img/news3.jpg" data-fancybox data-caption="News 3">
+            <div class="content-img third"></div>
+          </a>
+
+          <div class="box-date">
+            <h3>NEWS</h3>
+            <h4>22 February 2023</h4>
+          </div>
+          <div class="content-text">
+            <h1>Once in a Lifetime a new luxury hotel affiliation</h1>
+          </div>
+          <div class="content-button">
+            <h3>READ MORE</h3>
+            <i class="fa fa-arrow-right-long"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Latest News END -->
+
+    <!-- Letter -->
+    <section id="letter">
+      <div class="content">
+        <p>NEWSLETTER</p>
+        <h1>Subscribe to receive our latest news and information</h1>
+        <div class="input">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" placeholder="Your Email" />
+          <button>SUBMIT</button>
+        </div>
+      </div>
+    </section>
+    <!-- Letter END -->
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="container">
+        <div class="text">
+          <a href="#"><img src="logo/logo2.png" alt="" /></a>
+          <div class="address">
+            <p>2230 Madison Street</p>
+            <p>YountVille, CA 92129</p>
+            <p>(62) 812-120-742-61</p>
+            <p>Vhotelbinusalsut@gmail.com</p>
+          </div>
+          <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com/" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="navbar-footer">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>© Copyright 2023 Vhotel. All Rights Reserved.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer END -->
+
+    <!-- =========================================== JAVASCRIPT LIBRARY =============================================== -->
+    <!-- Fancy Box -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox]", {});
+      Fancybox.bind("[data-fancybox]", {});
+    </script>
+    <!-- Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- Animation.io -->
+    <script src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Jaralax -->
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <!-- SimpleParalax -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- Icons -->
+    <script>
+      feather.replace();
+    </script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <!-- =========================================== JAVASCRIPT LIBRARY =============================================== -->
+
+    <!-- Java Script -->
+    <script src="js/script.js"></script>
+    <script src="js/effect.js"></script>
+  </body>
+</html>
